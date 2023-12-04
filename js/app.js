@@ -73,6 +73,11 @@ window.borrarContacto = (idContacto)=>{
   agenda.splice(posicionContactoBuscado, 1);
   //actualizar el localstorage
   guardarEnLocalstorage();
+  //borrar la fila de la tabla
+  const tablaContacto = document.querySelector('tbody');
+  console.log(tablaContacto.children[posicionContactoBuscado])
+  tablaContacto.removeChild(tablaContacto.children[posicionContactoBuscado]);
+  //actualizar todos los td de la tabla con el numero de fila correcto
 }
 
 // logica
